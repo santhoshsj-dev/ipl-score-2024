@@ -2,8 +2,8 @@
 
 import math
 import numpy as np
-import pickle
 import streamlit as st
+import joblib
 
 #SET PAGE WIDE
 st.set_page_config(page_title='IPL Score Predictor 2024',layout="centered")
@@ -11,7 +11,10 @@ st.set_page_config(page_title='IPL Score Predictor 2024',layout="centered")
 #Get the ML model 
 
 filename='ml_model.pkl'
-model = pickle.load(open(filename,'rb'))
+model = joblib.load(filename)
+
+# Save model during the training phase
+joblib.dump(model, filename)
 
 #Title of the page with CSS
 
