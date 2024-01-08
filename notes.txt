@@ -1,0 +1,30 @@
+python -m venv env
+    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass     //Optional
+.venv\Scripts\Activate
+
+deactivate
+
+python.exe -m pip install --upgrade pip
+
+pip install numpy==1.23.5
+pip install streamlit==1.16.0
+pip install matplotlib==3.6.3
+pip install pandas==1.5.2
+pip install scikit-learn==1.2.0
+pip install seaborn==0.12.2
+pip install xgboost==1.7.3
+
+pip install distutils
+pip install setuptools
+pip install pandas
+
+pip install scikit-learn
+
+
+
+
+
+
+streamlit run ipl_score_predictor.py
+
+https://visualstudio.microsoft.com/visual-cpp-build-tools/
