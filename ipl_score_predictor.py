@@ -2,8 +2,8 @@
 
 import math
 import numpy as np
+import pickle
 import streamlit as st
-import joblib
 
 #SET PAGE WIDE
 st.set_page_config(page_title='IPL Score Predictor 2024',layout="centered")
@@ -11,10 +11,7 @@ st.set_page_config(page_title='IPL Score Predictor 2024',layout="centered")
 #Get the ML model 
 
 filename='ml_model.pkl'
-model = joblib.load(filename)
-
-# Save model during the training phase
-joblib.dump(model, filename)
+model = pickle.load(open(filename,'rb'))
 
 #Title of the page with CSS
 
@@ -65,9 +62,6 @@ elif batting_team == 'Royal Challengers Bangalore':
     prediction_array = prediction_array + [0,0,0,0,0,0,1,0]
 elif batting_team == 'Sunrisers Hyderabad':
     prediction_array = prediction_array + [0,0,0,0,0,0,0,1]
-
-
-
 
 #SELECT BOWLING TEAM
 
