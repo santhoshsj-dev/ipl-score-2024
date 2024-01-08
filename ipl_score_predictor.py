@@ -5,13 +5,20 @@ import pickle
 import streamlit as st
 import os
 
+from joblib import load
+
+
+
+
 # SET PAGE WIDE
 st.set_page_config(page_title='IPL Score Predictor 2024', layout="centered")
 
 # Get the ML model
 
 filename = 'ml_model.pkl'
-model = pickle.load(open(filename, 'rb'))
+# model = pickle.load(open(filename, 'rb'))
+
+model = load(filename)
 
 if not os.path.exists(filename):
     print(f"The file {filename} does not exist. Check the file path.")
